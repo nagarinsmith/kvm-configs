@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
-  <name>win10-paul</name>
-  <uuid>3ff53c17-d7cc-462c-aeac-92be13993193</uuid>
+  <name>windows10-paul</name>
+  <uuid>9845A173-29C9-E2CD-E0B4-A85E4550DF68</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
       <libosinfo:os id="http://microsoft.com/win/10"/>
