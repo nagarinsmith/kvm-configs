@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
   <name>windows10-diana</name>
-  <uuid>83876c37-50b7-45d9-b30a-51bfc6954eba</uuid>
+  <uuid>637530f7-f5dd-4b86-bcfa-a62915e51ad1</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
       <libosinfo:os id="http://microsoft.com/win/10"/>
