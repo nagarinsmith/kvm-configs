@@ -65,7 +65,7 @@
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type="block" device="disk">
       <driver name="qemu" type="raw" cache="none" io="native"/>
-      <source dev="/dev/disk/by-id/ata-ST2000DL003-9VT166_6YD016QH"/>
+      <source dev="/dev/disk/by-id/ata-Patriot_Burst_5785079C10EF00001079"/>
       <target dev="sdb" bus="sata"/>
       <boot order="1"/>
       <address type="drive" controller="0" bus="0" target="0" unit="1"/>
