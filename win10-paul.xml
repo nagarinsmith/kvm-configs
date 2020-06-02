@@ -107,10 +107,12 @@
     <controller type="pci" index="6" model="pcie-root-port">
       <model name="pcie-root-port"/>
       <target chassis="6" port="0x8"/>
-      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0" multifunction="on"/>
     </controller>
-    <controller type="virtio-serial" index="0">
-      <address type="pci" domain="0x0000" bus="0x03" slot="0x00" function="0x0"/>
+    <controller type="pci" index="7" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="7" port="0x9"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
     </controller>
     <interface type="bridge">
       <mac address="52:54:00:58:d4:f1"/>
@@ -119,20 +121,13 @@
       <driver queues="8"/>
       <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
     </interface>
-    <serial type="pty">
-      <target type="isa-serial" port="0">
-        <model name="isa-serial"/>
-      </target>
-    </serial>
-    <console type="pty">
-      <target type="serial" port="0"/>
-    </console>
     <input type="mouse" bus="ps2"/>
     <input type="keyboard" bus="ps2"/>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
         <address domain="0x0000" bus="0x08" slot="0x00" function="0x0"/>
       </source>
+      <rom bar="on" file="/opt/rom/650.rom"/>
       <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0" multifunction="on"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
@@ -151,6 +146,8 @@
   </devices>
   <qemu:commandline>
     <qemu:arg value="-cpu"/>
-    <qemu:arg value="host,hv-time,hv-relaxed,hv-vapic,hv-spinlocks=0x1fff,-amd-stibp"/>
+    <qemu:arg value="host,kvm=off,hv_vendor_id=null,hv-time,hv-relaxed,hv-vapic,hv-spinlocks=0x1fff,-amd-stibp"/>
+    <qemu:arg value='-machine'/> 
+    <qemu:arg value='q35,kernel_irqchip=on'/> 
   </qemu:commandline>
 </domain>
