@@ -9,7 +9,7 @@
   </metadata>
   <memory unit="KiB">8388608</memory>
   <currentMemory unit="KiB">8388608</currentMemory>
-  <vcpu placement="static" cpuset="0,12,1,13,2,14,3,15,4,16,5,17">12</vcpu>
+  <vcpu placement="static" cpuset="0-5,12-17">12</vcpu>
   <cputune>
     <vcpupin vcpu='0' cpuset='0'/>
     <vcpupin vcpu='1' cpuset='12'/>
