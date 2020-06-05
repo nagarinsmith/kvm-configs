@@ -10,8 +10,8 @@
   <memoryBacking>
 	  <hugepages/>
   </memoryBacking>
-  <memory unit="KiB">8388608</memory>
-  <currentMemory unit="KiB">8388608</currentMemory>
+  <memory unit="KiB">6291456</memory>
+  <currentMemory unit="KiB">6291456</currentMemory>
   <vcpu placement="static" cpuset="0-5,12-17">12</vcpu>
   <cputune>
     <vcpupin vcpu='0' cpuset='0'/>
