@@ -130,14 +130,25 @@
       <source>
         <address domain="0x0000" bus="0x08" slot="0x00" function="0x0"/>
       </source>
-      <rom bar="on" file="/opt/rom/650.rom"/>
-      <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0" multifunction="on"/>
+      <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x0" multifunction="on"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
         <address domain="0x0000" bus="0x08" slot="0x00" function="0x1"/>
       </source>
-      <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x1"/>
+      <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x1"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x08" slot="0x00" function="0x2"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x2"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x08" slot="0x00" function="0x3"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x3"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
