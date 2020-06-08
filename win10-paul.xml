@@ -118,7 +118,7 @@
       <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
     </controller>
     <interface type="bridge">
-      <mac address="6f:00:88:0d:48:84"/>
+      <mac address="9a:24:fe:d2:f7:2b"/>
       <source bridge="br0"/>
       <model type="virtio"/>
       <driver queues="8"/>
