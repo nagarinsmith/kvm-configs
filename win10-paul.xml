@@ -124,6 +124,10 @@
       <driver queues="8"/>
       <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
     </interface>
+    <interface type="network">
+      <source network="default"/>
+      <mac address="fa:c1:76:f4:79:4c"/>
+    </interface>
     <input type="mouse" bus="ps2"/>
     <input type="keyboard" bus="ps2"/>
     <hostdev mode="subsystem" type="pci" managed="yes">
