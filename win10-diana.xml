@@ -12,7 +12,7 @@
   </memoryBacking>
   <memory unit="KiB">6291456</memory>
   <currentMemory unit="KiB">6291456</currentMemory>
-  <vcpu placement="static" cpuset="6-11,18-23">12</vcpu>
+  <vcpu placement="static" cpuset="6-10,18-22">10</vcpu>
   <cputune>
     <vcpupin vcpu="0" cpuset="6"/>
     <vcpupin vcpu="1" cpuset="18"/>
@@ -24,8 +24,6 @@
     <vcpupin vcpu="7" cpuset="21"/>
     <vcpupin vcpu="8" cpuset="10"/>
     <vcpupin vcpu="9" cpuset="22"/>
-    <vcpupin vcpu="10" cpuset="11"/>
-    <vcpupin vcpu="11" cpuset="23"/>
   </cputune>
   <os>
     <type arch="x86_64" machine="pc-q35-5.0">hvm</type>
@@ -49,7 +47,7 @@
     <ioapic driver='kvm'/>
   </features>
   <cpu mode="host-passthrough" check="none">
-    <topology sockets='1' cores='6' threads='2'/>
+    <topology sockets='1' cores='5' threads='2'/>
     <cache mode='passthrough'/>
     <feature policy='require' name='topoext'/>
   </cpu>
