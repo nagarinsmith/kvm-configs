@@ -34,15 +34,10 @@
     <acpi/>
     <apic/>
     <hyperv>
-      <relaxed state='on'/>
-      <vapic state='on'/>
-      <spinlocks state='on' retries='8191'/>
-      <vpindex state='on'/>
-      <synic state='on'/>
-      <stimer state='on'/>
-      <reset state='on'/>
+      <relaxed state="on"/>
+      <vapic state="on"/>
+      <spinlocks state="on" retries="8191"/>
       <vendor_id state='on' value='nagarin'/>
-      <frequencies state='on'/>
     </hyperv>
     <kvm>
       <hidden state='on'/>
