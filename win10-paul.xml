@@ -1,31 +1,30 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
   <name>windows10-paul</name>
-  <uuid>9845A173-29C9-E2CD-E0B4-A85E4550DF68</uuid>
+  <uuid>9845a173-29c9-e2cd-e0b4-a85e4550df68</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
       <libosinfo:os id="http://microsoft.com/win/10"/>
     </libosinfo:libosinfo>
   </metadata>
-  <memoryBacking>
-	  <hugepages/>
-  </memoryBacking>
   <memory unit="KiB">6291456</memory>
   <currentMemory unit="KiB">6291456</currentMemory>
+  <memoryBacking>
+    <hugepages/>
+  </memoryBacking>
   <vcpu placement="static" cpuset="0-5,12-17">12</vcpu>
   <cputune>
-    <vcpupin vcpu='0' cpuset='0'/>
-    <vcpupin vcpu='1' cpuset='12'/>
-    <vcpupin vcpu='2' cpuset='1'/>
-    <vcpupin vcpu='3' cpuset='13'/>
-    <vcpupin vcpu='4' cpuset='2'/>
-    <vcpupin vcpu='5' cpuset='14'/>
-    <vcpupin vcpu='6' cpuset='3'/>
-    <vcpupin vcpu='7' cpuset='15'/>
-    <vcpupin vcpu='8' cpuset='4'/>
-    <vcpupin vcpu='9' cpuset='16'/>
-    <vcpupin vcpu='10' cpuset='5'/>
-    <vcpupin vcpu='11' cpuset='17'/>
+    <vcpupin vcpu="0" cpuset="0"/>
+    <vcpupin vcpu="1" cpuset="12"/>
+    <vcpupin vcpu="2" cpuset="1"/>
+    <vcpupin vcpu="3" cpuset="13"/>
+    <vcpupin vcpu="4" cpuset="2"/>
+    <vcpupin vcpu="5" cpuset="14"/>
+    <vcpupin vcpu="6" cpuset="3"/>
+    <vcpupin vcpu="7" cpuset="15"/>
+    <vcpupin vcpu="8" cpuset="4"/>
+    <vcpupin vcpu="9" cpuset="16"/>
+    <vcpupin vcpu="10" cpuset="5"/>
+    <vcpupin vcpu="11" cpuset="17"/>
   </cputune>
   <os>
     <type arch="x86_64" machine="pc-q35-5.0">hvm</type>
@@ -39,19 +38,19 @@
       <relaxed state="on"/>
       <vapic state="on"/>
       <spinlocks state="on" retries="8191"/>
-      <vendor_id state='on' value='nagarin'/>
+      <vendor_id state="on" value="nagarin"/>
     </hyperv>
     <kvm>
-      <hidden state='on'/>
+      <hidden state="on"/>
     </kvm>
     <vmport state="off"/>
     <smm state="on"/>
-    <ioapic driver='kvm'/>
+    <ioapic driver="kvm"/>
   </features>
   <cpu mode="host-passthrough" check="none">
-    <topology sockets='1' cores='6' threads='2'/>
-    <cache mode='passthrough'/>
-    <feature policy='require' name='topoext'/>
+    <topology sockets="1" dies="1" cores="6" threads="2"/>
+    <cache mode="passthrough"/>
+    <feature policy="require" name="topoext"/>
   </cpu>
   <clock offset="localtime">
     <timer name="rtc" tickpolicy="catchup"/>
@@ -117,6 +116,20 @@
       <target chassis="7" port="0x9"/>
       <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
     </controller>
+    <controller type="pci" index="8" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="8" port="0xa"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x2"/>
+    </controller>
+    <controller type="pci" index="9" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="9" port="0xb"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x3"/>
+    </controller>
+    <controller type="pci" index="10" model="pcie-to-pci-bridge">
+      <model name="pcie-pci-bridge"/>
+      <address type="pci" domain="0x0000" bus="0x01" slot="0x00" function="0x0"/>
+    </controller>
     <interface type="bridge">
       <mac address="9a:24:fe:d2:f7:2b"/>
       <source bridge="br0"/>
@@ -128,40 +141,58 @@
     <input type="keyboard" bus="ps2"/>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
+        <address domain="0x0000" bus="0x08" slot="0x00" function="0x0"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x0" multifunction="on"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x1"/>
+        <address domain="0x0000" bus="0x08" slot="0x00" function="0x1"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x1"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x2"/>
+        <address domain="0x0000" bus="0x08" slot="0x00" function="0x2"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x2"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x3"/>
+        <address domain="0x0000" bus="0x08" slot="0x00" function="0x3"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x3"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x04" slot="0x00"/>
+        <address domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
       </source>
-      <address type="pci" domain="0x0000" bus="0x01" slot="0x00" function="0x0"/>
+      <address type="pci" domain="0x0000" bus="0x03" slot="0x00" function="0x0"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x05" slot="0x00" function="0x1"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x05" slot="0x00" function="0x3"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x06" slot="0x00" function="0x0"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x00" slot="0x03" function="0x0"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x0a" slot="0x01" function="0x0"/>
     </hostdev>
     <memballoon model="none"/>
   </devices>
   <qemu:commandline>
     <qemu:arg value="-cpu"/>
     <qemu:arg value="host,kvm=off,hv_vendor_id=null,hv-time,hv-relaxed,hv-vapic,hv-spinlocks=0x1fff,-amd-stibp"/>
-    <qemu:arg value='-machine'/> 
-    <qemu:arg value='q35,kernel_irqchip=on'/> 
+    <qemu:arg value="-machine"/>
+    <qemu:arg value="q35,kernel_irqchip=on"/>
   </qemu:commandline>
 </domain>

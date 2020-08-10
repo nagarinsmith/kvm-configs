@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
   <name>windows10-diana</name>
   <uuid>637530f7-f5dd-4b86-bcfa-a62915e51ad1</uuid>
@@ -7,11 +6,11 @@
       <libosinfo:os id="http://microsoft.com/win/10"/>
     </libosinfo:libosinfo>
   </metadata>
-  <memoryBacking>
-	  <hugepages/>
-  </memoryBacking>
   <memory unit="KiB">6291456</memory>
   <currentMemory unit="KiB">6291456</currentMemory>
+  <memoryBacking>
+    <hugepages/>
+  </memoryBacking>
   <vcpu placement="static" cpuset="6-10,18-22">10</vcpu>
   <cputune>
     <vcpupin vcpu="0" cpuset="6"/>
@@ -37,19 +36,19 @@
       <relaxed state="on"/>
       <vapic state="on"/>
       <spinlocks state="on" retries="8191"/>
-      <vendor_id state='on' value='nagarin'/>
+      <vendor_id state="on" value="nagarin"/>
     </hyperv>
     <kvm>
-      <hidden state='on'/>
+      <hidden state="on"/>
     </kvm>
     <vmport state="off"/>
     <smm state="on"/>
-    <ioapic driver='kvm'/>
+    <ioapic driver="kvm"/>
   </features>
   <cpu mode="host-passthrough" check="none">
-    <topology sockets='1' cores='5' threads='2'/>
-    <cache mode='passthrough'/>
-    <feature policy='require' name='topoext'/>
+    <topology sockets="1" dies="1" cores="5" threads="2"/>
+    <cache mode="passthrough"/>
+    <feature policy="require" name="topoext"/>
   </cpu>
   <clock offset="localtime">
     <timer name="rtc" tickpolicy="catchup"/>
@@ -126,28 +125,28 @@
     <input type="keyboard" bus="ps2"/>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x0a" slot="0x00" function="0x0"/>
+        <address domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
       </source>
-      <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0" multifunction="on"/>
+      <address type="pci" domain="0x0000" bus="0x01" slot="0x00" function="0x0" multifunction="on"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x0a" slot="0x00" function="0x1"/>
+        <address domain="0x0000" bus="0x09" slot="0x00" function="0x1"/>
       </source>
-      <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x1"/>
+      <address type="pci" domain="0x0000" bus="0x01" slot="0x00" function="0x1"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x03" slot="0x00"/>
+        <address domain="0x0000" bus="0x03" slot="0x00" function="0x0"/>
       </source>
-      <address type="pci" domain="0x0000" bus="0x01" slot="0x00" function="0x0"/>
+      <address type="pci" domain="0x0000" bus="0x03" slot="0x00" function="0x0"/>
     </hostdev>
     <memballoon model="none"/>
   </devices>
   <qemu:commandline>
     <qemu:arg value="-cpu"/>
     <qemu:arg value="host,kvm=off,hv_vendor_id=null,hv-time,hv-relaxed,hv-vapic,hv-spinlocks=0x1fff,-amd-stibp"/>
-    <qemu:arg value='-machine'/> 
-    <qemu:arg value='q35,kernel_irqchip=on'/> 
+    <qemu:arg value="-machine"/>
+    <qemu:arg value="q35,kernel_irqchip=on"/>
   </qemu:commandline>
 </domain>
